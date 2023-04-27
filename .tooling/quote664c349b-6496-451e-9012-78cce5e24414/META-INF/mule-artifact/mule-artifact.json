@@ -1,0 +1,30 @@
+{
+  "configs": [
+    "configurations.xml",
+    "api-name.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:quote:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.4.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "api/api-name.raml",
+        "api/healthcheck.raml",
+        "api/request.raml",
+        "api/response.raml",
+        "api-name.xml",
+        "configurations.xml",
+        "log4j2.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

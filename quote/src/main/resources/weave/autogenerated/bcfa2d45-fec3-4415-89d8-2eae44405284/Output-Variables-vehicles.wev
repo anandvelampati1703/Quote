@@ -1,0 +1,14 @@
+%dw 2.0
+
+type auto_bcfa2d45_fec3_4415_89d8_2eae44405284_Output_Variables_vehicles = Array<Array<Document>>
+type Document = {|
+  "_id"?: {|  |}, 
+  quoteId?: String, 
+  year?: String, 
+  vin?: String, 
+  make?: String, 
+  model?: String
+|} {"typeId": "Document"}
+
+
+

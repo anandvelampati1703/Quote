@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd ">
+<mule xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd ">
     <http:listener-config name="api-name-httpListenerConfig">
         <http:listener-connection host="0.0.0.0" port="8081" />
     </http:listener-config>
@@ -132,20 +132,34 @@ output application/json
         <logger level="INFO" message="get:\api\issue\(quoteId):api-name-config" />
     </flow>
     <flow name="get:\health:api-name-config">
-        <logger level="INFO" message="get:\health:api-name-config" />
+        <logger level="INFO" message="Request received for health check" />
+		<ee:transform doc:name="Transform Message" doc:id="c56d367d-10c3-4732-a926-a3b8c38079be" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"status": {
+		"Health check": "Passed"
+		
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
     </flow>
-    <flow name="get:\live:api-name-config">
+	<flow name="get:\live:api-name-config">
         <logger level="INFO" message="get:\live:api-name-config" />
     </flow>
     <flow name="get:\ready:api-name-config">
         <logger level="INFO" message="get:\ready:api-name-config" />
     </flow>
-    <flow name="post:\api\issue\(quoteId):application\json:api-name-config">
+	<flow name="post:\api\issue\(quoteId):application\json:api-name-config">
         <ee:transform>
             <ee:variables>
-                <ee:set-variable variableName="quoteId">attributes.uriParams.'quoteId'</ee:set-variable>
+				<ee:set-variable variableName="quoteId" ><![CDATA[attributes.uriParams.'quoteId']]></ee:set-variable>
             </ee:variables>
         </ee:transform>
-        <logger level="INFO" message="post:\api\issue\(quoteId):application\json:api-name-config" />
+        <logger level="INFO" message='#["Request received for quote id" ++ vars.quoteId]' />
+		<flow-ref doc:name="rate-api-flow-reference" doc:id="e1a0604e-e5a2-4191-bdeb-acf867fbe566" name="rate-api-impl-sub-flow"/>
     </flow>
 </mule>

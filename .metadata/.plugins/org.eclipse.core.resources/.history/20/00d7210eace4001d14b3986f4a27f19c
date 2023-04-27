@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:mongo="http://www.mulesoft.org/schema/mule/mongo"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/mongo http://www.mulesoft.org/schema/mule/mongo/current/mule-mongo.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="rate-api-impl-sub-flow" doc:id="bcfa2d45-fec3-4415-89d8-2eae44405284" >
+		<mongo:find-documents collectionName="drivers" fields="," doc:name="Get drivers" doc:id="9344cf5f-bbe6-47b2-831b-d4ee1198cb23" config-ref="Rate_DB_Config" target="drivers">
+			<mongo:query ><![CDATA[#[{"quoteId": vars.quoteId}]]]></mongo:query>
+		</mongo:find-documents>
+		<mongo:find-documents doc:name="Get Incidents" doc:id="c640b450-4946-46df-b4dd-1fc85d81cb7e" config-ref="Rate_DB_Config" collectionName="incidents" fields="," target="incidents">
+			<mongo:query ><![CDATA[#[{"quoteId": vars.quoteId}]]]></mongo:query>
+		</mongo:find-documents>
+		<mongo:find-documents doc:name="Get Vehicles" doc:id="56ab98ca-7977-4ebf-8122-002e25417061" config-ref="Rate_DB_Config" collectionName="vehicles" fields="," target="vehicles">
+			<mongo:query ><![CDATA[#[{"quoteId": vars.quoteId}]]]></mongo:query>
+		</mongo:find-documents>
+		<ee:transform doc:name="Transform Message" doc:id="ff5fdf20-6daf-4fb1-ae25-7d2fc538f7fc" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	drivers: vars.drivers,
+	incidents: vars.incidents,
+	vehicles: vars.vehicles
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</sub-flow>
+</mule>
