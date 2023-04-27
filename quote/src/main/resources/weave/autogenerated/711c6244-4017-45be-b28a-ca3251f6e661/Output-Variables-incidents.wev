@@ -1,0 +1,12 @@
+%dw 2.0
+
+type auto_711c6244_4017_45be_b28a_ca3251f6e661_Output_Variables_incidents = Array<Array<Document>>
+type Document = {|
+  "_id"?: {|  |}, 
+  quoteId?: String, 
+  AtFault?: String, 
+  incidentDate?: String
+|} {"typeId": "Document"}
+
+
+

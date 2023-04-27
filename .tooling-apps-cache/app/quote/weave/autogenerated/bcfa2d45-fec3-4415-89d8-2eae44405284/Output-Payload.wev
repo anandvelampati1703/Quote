@@ -1,0 +1,28 @@
+%dw 2.0
+
+type auto_bcfa2d45_fec3_4415_89d8_2eae44405284_Output_Payload = {|
+  result: {
+    status: String, 
+    policy: {
+      "issue-info": {
+        confirmContactNum: String, 
+        accountNum: String, 
+        policyNumber: String, 
+        bankName: String, 
+        id?: String, 
+        confirmEmail: String, 
+        quoteId: String, 
+        _?: Any
+      }, 
+      policyNumber: String, 
+      vehicles: Array<{        daysDriven: String,         milesDriven: String,         annualMileage: String,         vehicleUsage: String,         year: String,         model: Number,         id: String,         make: Number,         vehicleOwned: String,         vehiclePrimaryUse: String,         _?: Any      }>, 
+      drivers: Array<{        currentIns: String,         education: String,         gender: Number,         name: String,         licenseNum: String,         id: String,         employmentStatus: String,         marialStatus: Number,         _?: Any      }>, 
+      coverages: Array<{        comp: String,         col: String,         premium: String,         pd: String,         rerim: String,         bi: String,         id: String,         med: String,         _?: Any      }>, 
+      customer: Array<{        zip: String,         firstName: String,         lastName: String,         apt: String,         stAddress: String,         dob: String,         id: String,         _?: Any      }>, 
+      _?: Any
+    }, 
+    _?: Any
+  }, 
+  policyNumber: String
+|}
+

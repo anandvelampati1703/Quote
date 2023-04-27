@@ -2789,3 +2789,405 @@ java.lang.NullPointerException
 
 !ENTRY org.mule.tooling.ui.contribution.munit 1 1 2023-04-26 23:38:38.294
 !MESSAGE Deleting MUnit temporary folder in C:\Users\anand\AppData\Local\Temp\munit-temp-dir
+!SESSION 2023-04-27 12:02:49.034 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.16.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jface 2 0 2023-04-27 12:03:14.742
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 12:03:14.742
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ffa8126,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@23ee70a7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.mule.tooling.ui.contribution.munit 1 1 2023-04-27 12:03:19.643
+!MESSAGE Creating MUnit temporary folder in C:\Users\anand\AppData\Local\Temp\munit-temp-dir
+
+!ENTRY org.mule.tooling.core 1 0 2023-04-27 12:03:46.332
+!MESSAGE Mule Version 4.4.0-20220824, was mapped to Tooling Version 4.4.0-20220824
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-04-27 12:03:57.539
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\anand'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.mule.tooling.core 1 0 2023-04-27 12:05:45.954
+!MESSAGE Checking updates in Exchange for: [com.mulesoft.connectors:mule-mongodb-connector, org.mule.modules:mule-apikit-module, org.mule.connectors:mule-sockets-connector, org.mule.connectors:mule-http-connector]
+
+!ENTRY org.mule.tooling.runtime 1 0 2023-04-27 12:06:01.150
+!MESSAGE Starting shell termination command "[taskkill, /F, /PID, 6624]"
+
+!ENTRY org.mule.tooling.runtime 1 0 2023-04-27 12:06:05.787
+!MESSAGE Finished shell termination command "[taskkill, /F, /PID, 6624]"
+
+!ENTRY org.mule.tooling.core 4 0 2023-04-27 12:06:05.810
+!MESSAGE Error preparing tooling instance
+!STACK 0
+org.mule.tooling.runtime.controller.MuleControllerException: Timeout while starting mule instance
+	at org.mule.tooling.runtime.controller.MuleController.start(MuleController.java:163)
+	at org.mule.tooling.client.startup.ToolingManager.setup(ToolingManager.java:341)
+	at org.mule.tooling.client.startup.ToolingManager.getToolingInstance(ToolingManager.java:162)
+	at org.mule.tooling.client.startup.ToolingClientStartup$1.lambda$0(ToolingClientStartup.java:24)
+	at java.base/java.util.Optional.ifPresent(Optional.java:183)
+	at org.mule.tooling.client.startup.ToolingClientStartup$1.run(ToolingClientStartup.java:22)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.awaitility.core.ConditionTimeoutException: Condition with lambda expression in org.mule.tooling.runtime.controller.MuleController was not fulfilled within 1 minutes 30 seconds.
+	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:148)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:78)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:26)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:873)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:842)
+	at org.mule.tooling.runtime.controller.MuleController.start(MuleController.java:147)
+	... 6 more
+
+!ENTRY org.mule.tooling.core 4 0 2023-04-27 12:06:05.815
+!MESSAGE Tooling instance could not be started, another attempt will be made
+!STACK 0
+org.mule.tooling.client.startup.ToolingNotAvailableException: Tooling instance could not be started, another attempt will be made
+	at org.mule.tooling.client.startup.ToolingManager.setup(ToolingManager.java:354)
+	at org.mule.tooling.client.startup.ToolingManager.getToolingInstance(ToolingManager.java:162)
+	at org.mule.tooling.client.startup.ToolingClientStartup$1.lambda$0(ToolingClientStartup.java:24)
+	at java.base/java.util.Optional.ifPresent(Optional.java:183)
+	at org.mule.tooling.client.startup.ToolingClientStartup$1.run(ToolingClientStartup.java:22)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.mule.tooling.runtime.controller.MuleControllerException: Timeout while starting mule instance
+	at org.mule.tooling.runtime.controller.MuleController.start(MuleController.java:163)
+	at org.mule.tooling.client.startup.ToolingManager.setup(ToolingManager.java:341)
+	... 5 more
+Caused by: org.awaitility.core.ConditionTimeoutException: Condition with lambda expression in org.mule.tooling.runtime.controller.MuleController was not fulfilled within 1 minutes 30 seconds.
+	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:148)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:78)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:26)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:873)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:842)
+	at org.mule.tooling.runtime.controller.MuleController.start(MuleController.java:147)
+	... 6 more
+
+!ENTRY org.mule.tooling.core 1 0 2023-04-27 12:06:38.474
+!MESSAGE Check finished: there are updates for some Mule Modules
+
+!ENTRY org.mule.tooling.core 1 0 2023-04-27 12:12:47.202
+!MESSAGE Tooling workspace is C:\MuleSoftWorkSpaces\Quote\.tooling-apps-cache
+
+!ENTRY org.eclipse.jface 2 0 2023-04-27 12:12:48.068
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 12:12:48.068
+!MESSAGE A conflict occurred for CTRL+7:
+Binding(CTRL+7,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.toggle.comment,Toggle Comment,
+		Toggle comment the selected lines,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@95d3dc8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+Binding(CTRL+7,
+	ParameterizedCommand(Command(org.mule.tooling.messageflow.editor.comment,Toggle Comment,
+		Toggle comment for the selected processors,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5686f018,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.keybindings.contexts.muleStudioFocus,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 12:12:48.068
+!MESSAGE A conflict occurred for CTRL+SHIFT+K:
+Binding(CTRL+SHIFT+K,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findPrevious,Find Previous,
+		Find previous item,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2da788b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+K,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findPrevious,Find Previous,
+		Find previous item,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2da788b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 12:12:48.068
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.format,Format,
+		Format the selected text,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@215998b6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.mule.tooling.ui.openFlow,Open Flow,
+		Search For Flows in the current workspace,
+		Category(org.eclipse.core.commands.categories.autogenerated,Uncategorized,Commands that were either auto-generated or have no category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@418a5228,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 12:12:48.068
+!MESSAGE A conflict occurred for CTRL+K:
+Binding(CTRL+K,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findNext,Find Next,
+		Find next item,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@20ed6c31,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+K,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findNext,Find Next,
+		Find next item,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@20ed6c31,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 12:12:48.068
+!MESSAGE A conflict occurred for CTRL+SHIFT+X:
+Binding(CTRL+SHIFT+X,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.upperCase,To Upper Case,
+		Changes the selection to upper case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@71a25687,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+Binding(CTRL+SHIFT+X,
+	ParameterizedCommand(Command(org.mule.tooling.runtime.muleLaunchShortcut.run,Run Mule Application,
+		Run Mule Application,
+		Category(org.mule.tooling.runtime.ui.category,Runtime Category,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1cd3ec2d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2023-04-27 12:13:07.618
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 12:13:07.618
+!MESSAGE A conflict occurred for F2:
+Binding(F2,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65d8f9d2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F2,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.showInformation,Show Tooltip Description,
+		Displays information for the current caret location in a focused hover,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@43040840,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+
+!ENTRY org.mule.tooling.maven 1 0 2023-04-27 12:13:12.836
+!MESSAGE  *** 19407 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.eclipse.jface 2 0 2023-04-27 12:14:50.181
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 12:14:50.181
+!MESSAGE A conflict occurred for CTRL+F:
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findReplace,Find and Replace,
+		Find and replace text,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@bf562b3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.searchCommand,Find/Replace,
+		Find/Replace,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6a18bbeb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.mule.tooling.commands.focusSearchCommand,Focus Search Command,
+		Focus Search in Palette,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@9f5022c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+
+!ENTRY org.mule.tooling.core 1 0 2023-04-27 12:15:23.342
+!MESSAGE Started tooling v[4.4.0] with timeout [180s] at path:
+C:\AnypointStudio-7.14.0-win64\AnypointStudio\configuration\org.eclipse.osgi\393\data\.runtimes\tooling-jdauglxq
+
+!ENTRY org.eclipse.ui 4 0 2023-04-27 12:17:20.250
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.mule.tooling.ui.dfl.contribution.customeditor.DataWeaveExpressionEditor.getContent(DataWeaveExpressionEditor.java:222)
+	at org.mule.tooling.ui.dfl.contribution.customeditor.DataWeaveExpressionEditor.getValue(DataWeaveExpressionEditor.java:195)
+	at org.mule.tooling.ui.dfl.contribution.customeditor.DataWeaveFieldEditorCreator$DataWeaveFieldEditor.getValue(DataWeaveFieldEditorCreator.java:34)
+	at org.mule.tooling.ui.modules.core.widgets.editors.ExpressionWrapperFieldEditor.getValue(ExpressionWrapperFieldEditor.java:145)
+	at org.mule.tooling.ui.modules.core.widgets.editors.AbstractFieldEditor.saveTo(AbstractFieldEditor.java:486)
+	at org.mule.tooling.ui.modules.core.widgets.AttributesPropertyPage.saveTo(AttributesPropertyPage.java:1307)
+	at org.mule.tooling.messageflow.util.MessageFlowUtils.lambda$7(MessageFlowUtils.java:925)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+
+!ENTRY org.mule.tooling.maven 1 0 2023-04-27 12:48:13.807
+!MESSAGE  *** 12262 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.maven 1 0 2023-04-27 12:48:24.464
+!MESSAGE  *** 2614 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.maven 1 0 2023-04-27 12:52:35.613
+!MESSAGE  *** 79130 EmbeddedMavenRunner [configuration=MavenPreferences [isDontWarnAgainIfNoInstallationFoundChecked()=false, isGlobalMavenSupportEnabled()=true, getMavenInstallationHome()=C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.0, getMavenOpts()=, getDefaultGroupId()=com.mycompany, getBaseCommandline()=mvn clean package -nsu -DskipMunitTests, isDisplayRuntimeVersionWarning()=true, isExternalInstallation()=false]]
+
+!ENTRY org.mule.tooling.runtime 1 0 2023-04-27 12:59:22.564
+!MESSAGE Starting shell termination command "[taskkill, /F, /PID, 16532]"
+
+!ENTRY org.mule.tooling.runtime 1 0 2023-04-27 12:59:22.574
+!MESSAGE Finished shell termination command "[taskkill, /F, /PID, 16532]"
+
+!ENTRY org.mule.tooling.runtime 2 0 2023-04-27 12:59:22.855
+!MESSAGE Termination command ShellTerminationCommand [getTerminationCommand()=[taskkill, /F, /PID, 16532]] indicate retry action is necessary, moving on to next one
+
+!ENTRY org.mule.tooling.runtime 1 0 2023-04-27 12:59:22.855
+!MESSAGE Starting shell termination command "[taskkill, /F, /PID, 15500]"
+
+!ENTRY org.mule.tooling.runtime 1 0 2023-04-27 12:59:22.859
+!MESSAGE Finished shell termination command "[taskkill, /F, /PID, 15500]"
+
+!ENTRY org.mule.tooling.runtime 2 0 2023-04-27 12:59:23.018
+!MESSAGE Termination command ShellTerminationCommand [getTerminationCommand()=[taskkill, /F, /PID, 15500]] indicate retry action is necessary, moving on to next one
+
+!ENTRY org.eclipse.jface 2 0 2023-04-27 13:01:03.036
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 13:01:03.036
+!MESSAGE A conflict occurred for CTRL+SHIFT+P:
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.mule.tooling.apikit.common.openAPI,Open API Resource,
+		Search For API resources in the current workspace,
+		Category(org.mule.tooling.apikit.ui.commands.api.search.category,API Search,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7d06c68d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.mule.tooling.ui.exportImageCommand,Export image,
+		Export image,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2d4696a0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.keybindings.contexts.muleStudio,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.turnOnOffPreviewCommand,Turn on/off preview,
+		Turn on/off preview,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5cb99a43,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 13:01:03.036
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@157e614,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.mule.tooling.commands.goToImplementationCommand,Go To Implementation Command,
+		Go to Implementation,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4a2e7a1d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.keybindings.contexts.muleStudio,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.openFunctionBrowserCommand,Apply Function to Field Assignment,
+		Apply Function to Field Assignment,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5344166e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+
+!ENTRY org.mule.tooling.maven 1 0 2023-04-27 13:02:31.292
+!MESSAGE  *** 80416 EmbeddedMavenRunner [configuration=MavenPreferences [isDontWarnAgainIfNoInstallationFoundChecked()=false, isGlobalMavenSupportEnabled()=true, getMavenInstallationHome()=C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.0, getMavenOpts()=, getDefaultGroupId()=com.mycompany, getBaseCommandline()=mvn clean package -nsu -DskipMunitTests, isDisplayRuntimeVersionWarning()=true, isExternalInstallation()=false]]
+
+!ENTRY org.eclipse.jface 2 0 2023-04-27 13:09:21.677
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-27 13:09:21.677
+!MESSAGE A conflict occurred for CTRL+Z:
+Binding(CTRL+Z,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@709351ea,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,win32,system)
+Binding(CTRL+Z,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.undo,Undo,
+		Undo the last operation,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@36fcc7ea,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(CTRL+Z,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.undoCommand,Undo Mapping Command,
+		Undo Mapping Command,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6b08b51e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)

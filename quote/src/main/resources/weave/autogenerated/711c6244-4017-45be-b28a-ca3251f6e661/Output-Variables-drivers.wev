@@ -1,0 +1,17 @@
+%dw 2.0
+
+type auto_711c6244_4017_45be_b28a_ca3251f6e661_Output_Variables_drivers = Array<Array<Document>>
+type Document = {|
+  "_id"?: {|  |}, 
+  quoteId?: String, 
+  driverId?: String, 
+  name?: String, 
+  License?: String, 
+  Age?: String, 
+  DateOfBirth?: String, 
+  Gender?: String, 
+  MaritalStatus?: String
+|} {"typeId": "Document"}
+
+
+

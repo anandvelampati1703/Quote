@@ -1,0 +1,4 @@
+%dw 2.0
+
+type auto_711c6244_4017_45be_b28a_ca3251f6e661_Input_Variables_queryParam = {| quoteId: String {"typeAlias": "auto_bcfa2d45-fec3-4415-89d8-2eae44405284_Input-Variables-quoteId"} |}
+
